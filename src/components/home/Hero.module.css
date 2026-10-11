@@ -1,0 +1,333 @@
+.hero {
+  padding: 42px var(--page-gutter) 24px;
+}
+
+.heroInner {
+  width: min(100%, var(--container-width));
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 0.88fr 1.12fr;
+  align-items: center;
+  gap: clamp(40px, 6vw, 96px);
+}
+
+.copy {
+  padding-block: 48px;
+}
+
+.title {
+  margin: 28px 0 24px;
+  font-family: var(--font-display);
+  font-size: clamp(48px, 5.2vw, 78px);
+  font-weight: 400;
+  letter-spacing: -0.065em;
+  line-height: 1.06;
+}
+
+.title span {
+  color: var(--color-olive);
+  font-style: italic;
+}
+
+.description {
+  max-width: 420px;
+  margin-bottom: 32px;
+  color: var(--color-text-muted);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.primaryAction {
+  min-height: 54px;
+  padding: 0 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  background: var(--color-text);
+  color: var(--color-background);
+  font-size: 12px;
+  transition:
+    background var(--transition-base),
+    transform var(--transition-base);
+}
+
+.primaryAction:hover {
+  background: var(--color-olive);
+  transform: translateY(-2px);
+}
+
+.primaryAction span {
+  font-size: 18px;
+}
+
+.secondaryAction {
+  padding-block: 8px;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 12px;
+  transition: border-color var(--transition-base);
+}
+
+.secondaryAction:hover {
+  border-color: var(--color-text);
+}
+
+.note {
+  margin-top: 56px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.noteLine {
+  width: 28px;
+  height: 1px;
+  margin-top: 11px;
+  flex-shrink: 0;
+  background: var(--color-clay);
+}
+
+.note p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.visual {
+  position: relative;
+  min-height: 590px;
+  overflow: visible;
+  background: var(--color-border);
+}
+
+.heroImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+.imageLabel {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  left: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-shadow: 0 1px 8px rgb(0 0 0 / 40%);
+}
+
+.propertyCard {
+  position: absolute;
+  right: -28px;
+  bottom: 30px;
+  width: min(350px, 88%);
+  padding: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: var(--color-surface);
+  box-shadow: 0 12px 40px rgb(36 37 34 / 8%);
+}
+
+.cardLabel {
+  color: var(--color-olive);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.propertyCard h2 {
+  margin: 12px 0 8px;
+  font-family: var(--font-display);
+  font-size: 25px;
+  letter-spacing: -0.03em;
+}
+
+.propertyCard p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.cardArrow {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--color-border);
+  font-size: 18px;
+  transition:
+    background var(--transition-base),
+    color var(--transition-base);
+}
+
+.cardArrow:hover {
+  background: var(--color-text);
+  color: var(--color-background);
+}
+
+.heroFooter {
+  width: min(100%, var(--container-width));
+  margin: 56px auto 0;
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+}
+
+.footerDivider {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--color-clay);
+}
+
+.scrollLink {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.scrollLink span {
+  color: var(--color-olive);
+  font-size: 16px;
+}
+
+@media (max-width: 1100px) {
+  .heroInner {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+
+  .visual {
+    min-height: 500px;
+  }
+
+  .title {
+    font-size: clamp(46px, 5.5vw, 66px);
+  }
+
+  .propertyCard {
+    right: -12px;
+  }
+
+  .heroFooter {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding-top: 24px;
+  }
+
+  .heroInner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .copy {
+    padding-block: 32px 0;
+  }
+
+  .title {
+    max-width: 680px;
+    font-size: clamp(52px, 9vw, 76px);
+  }
+
+  .description {
+    max-width: 540px;
+  }
+
+  .note {
+    margin-top: 32px;
+  }
+
+  .visual {
+    min-height: clamp(420px, 72vw, 600px);
+    margin-right: 12px;
+  }
+
+  .heroFooter {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero {
+    padding-top: 12px;
+  }
+
+  .copy {
+    padding-top: 28px;
+  }
+
+  .title {
+    margin-top: 22px;
+    font-size: clamp(44px, 11.5vw, 58px);
+    letter-spacing: -0.06em;
+  }
+
+  .description {
+    font-size: 13px;
+  }
+
+  .actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .visual {
+    min-height: 420px;
+    margin-right: 0;
+  }
+
+  .imageLabel {
+    right: 12px;
+    left: 12px;
+    font-size: 8px;
+  }
+
+  .propertyCard {
+    right: 12px;
+    bottom: 16px;
+    width: calc(100% - 24px);
+    padding: 18px;
+  }
+
+  .propertyCard h2 {
+    font-size: 22px;
+  }
+
+  .heroFooter {
+    gap: 12px;
+    font-size: 8px;
+  }
+
+  .scrollLink {
+    width: 100%;
+    margin: 8px 0 0;
+  }
+}

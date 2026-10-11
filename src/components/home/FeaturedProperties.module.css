@@ -1,0 +1,291 @@
+.section {
+  padding: 112px var(--page-gutter) 72px;
+  background: var(--color-surface);
+}
+
+.inner {
+  width: min(100%, var(--container-width));
+  margin-inline: auto;
+}
+
+.intro {
+  margin-bottom: 48px;
+  display: grid;
+  grid-template-columns: 1fr 0.65fr;
+  align-items: end;
+  gap: 48px;
+}
+
+.heading {
+  margin: 24px 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(42px, 5vw, 68px);
+  font-weight: 400;
+  letter-spacing: -0.06em;
+  line-height: 1.1;
+}
+
+.heading span {
+  color: var(--color-olive);
+  font-style: italic;
+}
+
+.introCopy {
+  max-width: 410px;
+  margin: 0 0 6px;
+  color: var(--color-text-muted);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.collection {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: start;
+  gap: 40px;
+}
+
+.featured,
+.secondary {
+  min-width: 0;
+}
+
+.imageLink,
+.secondaryImage {
+  display: block;
+  color: inherit;
+}
+
+.featuredImage,
+.secondaryImage {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-border);
+}
+
+.featuredImage {
+  aspect-ratio: 0.92;
+}
+
+.featuredImage img,
+.secondaryImage img {
+  object-fit: cover;
+  transition: transform 600ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.imageLink:hover img,
+.secondaryImage:hover img {
+  transform: scale(1.035);
+}
+
+.imageIndex {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  padding: 8px 10px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+}
+
+.featuredDetails {
+  padding-top: 22px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.location {
+  display: block;
+  margin-bottom: 9px;
+  color: var(--color-olive);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.featuredDetails h3,
+.secondaryDetails h3 {
+  margin: 0 0 10px;
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+}
+
+.featuredDetails h3 {
+  font-size: clamp(26px, 2.7vw, 36px);
+}
+
+.featuredDetails p,
+.secondaryDetails p {
+  max-width: 390px;
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 12px;
+  line-height: 1.85;
+}
+
+.bedrooms {
+  flex-shrink: 0;
+  color: var(--color-text-muted);
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.featuredDetails > .bedrooms {
+  padding-top: 3px;
+}
+
+.secondaryProperties {
+  display: flex;
+  flex-direction: column;
+  gap: 38px;
+}
+
+.secondaryImage {
+  aspect-ratio: 1.3;
+}
+
+.secondaryDetails {
+  padding-top: 16px;
+}
+
+.secondaryDetails h3 {
+  font-size: 26px;
+}
+
+.secondaryDetails p {
+  margin-bottom: 12px;
+}
+
+.bottomLine {
+  margin-top: 56px;
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border-top: 1px solid var(--color-border);
+}
+
+.bottomLine > span {
+  color: var(--color-text-muted);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+}
+
+.viewAll {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 12px;
+}
+
+.viewAll span {
+  color: var(--color-olive);
+  font-size: 17px;
+}
+
+.disclaimer {
+  margin: 18px 0 0;
+  color: var(--color-text-muted);
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding-top: 80px;
+  }
+
+  .intro {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .introCopy {
+    max-width: 560px;
+  }
+
+  .collection {
+    grid-template-columns: 1fr 0.85fr;
+    gap: 24px;
+  }
+
+  .featuredDetails {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .secondaryProperties {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 760px) {
+  .section {
+    padding: 72px var(--page-gutter) 48px;
+  }
+
+  .collection {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .featuredImage {
+    aspect-ratio: 0.95;
+  }
+
+  .featuredDetails {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .secondaryProperties {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 18px;
+  }
+
+  .secondaryImage {
+    aspect-ratio: 0.85;
+  }
+
+  .secondaryDetails h3 {
+    font-size: 22px;
+  }
+
+  .secondaryDetails p {
+    font-size: 11px;
+  }
+
+  .bedrooms {
+    white-space: normal;
+  }
+
+  .bottomLine {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+  }
+}
+
+@media (max-width: 460px) {
+  .secondaryProperties {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .secondaryImage {
+    aspect-ratio: 1.15;
+  }
+
+  .secondaryDetails h3 {
+    font-size: 25px;
+  }
+}
